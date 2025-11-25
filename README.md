@@ -275,7 +275,7 @@ $$\min \sum_{i \in I} \sum_{t \in T} \left[ \underbrace{a_i p_{i,t}^2 + b_i p_{i
 
 where $a_i p_{i,t}^2 + b_i p_{i,t} + c_i$ is the fuel cost of unit $i$ in period $t$, using a quadratic function form. $a_i > 0$ ensures the convexity of the cost function, thereby guaranteeing the global optimality of the optimization problem. This form is consistent with Eq. (1.2) in [1]. $C_i^{SU}$ and $C_i^{SD}$ are the start-up cost and shut-down cost of unit $i$, corresponding to $ST_{it}$ and $SD_{it}$ in [1], respectively. $v_{i,t}$ and $w_{i,t}$ are binary indicator variables, representing whether unit $i$ starts up or shuts down in period $t$, respectively.
 
-![Cost Function Theoretical Analysis](results/problem1/theoretical_1_cost_functions_20251124_061905.png)
+![Cost Function Theoretical Analysis](Problem/results/problem1/theoretical_1_cost_functions_20251124_061905.png)
 
 *Figure 3.1.1 Analysis of unit fuel cost function characteristics (quadratic convex function form)*
 
@@ -321,7 +321,7 @@ $$1 - u_{i,t} \geq \sum_{\tau = \max(1, t - T_i^{DN} + 1)}^{t} w_{i,\tau}, \quad
 
 where $T_i^{UP}$ and $T_i^{DN}$ are the minimum up-time and minimum down-time of unit $i$, respectively, corresponding to the minimum up-time and minimum down-time parameters in [1]. Considering the initial state of units, additional handling is required for the minimum up-time/down-time requirements in the initial periods.
 
-![Minimum Up/Down Time Constraint Theoretical Analysis](results/problem1/theoretical_3_min_updown_time_20251124_061905.png)
+![Minimum Up/Down Time Constraint Theoretical Analysis](Problem/results/problem1/theoretical_3_min_updown_time_20251124_061905.png)
 
 *Figure 3.1.2 Modeling principles of minimum up-time and minimum down-time constraints*
 
@@ -339,7 +339,7 @@ $$p_{i,t-1} - p_{i,t} \leq \underbrace{R_i^{DN} u_{i,t}}_{\text{Ramp limit when 
 
 where $R_i^{UP}$ and $R_i^{DN}$ are the ramp-up rate limit and ramp-down rate limit of unit $i$, respectively, corresponding to $\nabla P_{it}^{\max}$ in [1]. When a unit is online in both adjacent periods ($u_{i,t-1} = u_{i,t} = 1$), the constraint simplifies to the standard ramp rate limit, consistent with the form in [1]; when the unit status changes, the constraint is automatically relaxed to ensure feasibility.
 
-![Ramp Rate Constraint Theoretical Analysis](results/problem1/theoretical_2_ramp_constraints_20251124_061905.png)
+![Ramp Rate Constraint Theoretical Analysis](Problem/results/problem1/theoretical_2_ramp_constraints_20251124_061905.png)
 
 *Figure 3.1.3 Modeling principles and feasible region analysis of ramp rate constraints*
 
@@ -466,11 +466,11 @@ The total generation and statistical indicators for each unit over 24 hours are 
 3. **Unit 8** ($P^{\max} = 35$ MW): Has the highest power utilization rate (74.4%), operating at full capacity during peak load periods. With low cost coefficients ($a_8 = 0.00834$, $b_8 = 3.25$), it has good economic performance.
 4. **Units 11 and 13** ($P^{\max} = 30-40$ MW): Output is higher during peak periods and near minimum output during valley periods, flexibly adjusting to meet load variations.
 
-![Stacked Generation Area Chart](results/problem1/4_stacked_generation_20251121_212827.png)
+![Stacked Generation Area Chart](Problem/results/problem1/4_stacked_generation_20251121_212827.png)
 
 *Figure 3.1.4 Stacked generation area chart for each unit (black solid line represents load demand)*
 
-![Unit Utilization Statistics](results/problem1/5_unit_utilization_20251124_061905.png)
+![Unit Utilization Statistics](Problem/results/problem1/5_unit_utilization_20251124_061905.png)
 
 *Figure 3.1.5 Unit utilization statistics and 24-hour total generation comparison*
 
@@ -561,7 +561,7 @@ $$P_{ij,t} = B_{ij} (\theta_{i,t} - \theta_{j,t}), \quad \forall (i,j) \in L, \f
 
 where $B_{ij} = 1/X_{ij}$ is the susceptance of line $(i,j)$, $X_{ij}$ is the reactance of line $(i,j)$, and $L$ is the set of transmission lines. This equation is based on the linearization assumptions of DC power flow: neglecting line resistance ($R_{ij} \ll X_{ij}$), neglecting voltage magnitude variations, and considering only active power and voltage angles.
 
-![DC Power Flow Theoretical Analysis](results/problem2/theoretical_3_dc_power_flow_20251124_061947.png)
+![DC Power Flow Theoretical Analysis](Problem/results/problem2/theoretical_3_dc_power_flow_20251124_061947.png)
 
 *Figure 3.2.1 DC power flow model theoretical analysis and network topology*
 
@@ -634,7 +634,7 @@ The solver parameter configuration is identical to Problem 1, with an optimality
 
 ### 3.2.3 Solution Results Analysis
 
-![N-1 Security Constraint Theoretical Analysis](results/problem2/theoretical_2_n1_security_20251124_061947.png)
+![N-1 Security Constraint Theoretical Analysis](Problem/results/problem2/theoretical_2_n1_security_20251124_061947.png)
 
 *Figure 3.2.4 N-1 security constraint theoretical analysis: security assessment for single-unit and single-line failure scenarios*
 
@@ -647,7 +647,7 @@ Solving with the Gurobi solver yields a global optimal solution with an optimal 
 
 **Key Finding**: The total cost of Problem 2 is identical to Problem 1, which has important theoretical significance and practical value.
 
-![3D Cost Network Analysis](results/problem2/advanced_6_3d_cost_network_20251124_061947.png)
+![3D Cost Network Analysis](Problem/results/problem2/advanced_6_3d_cost_network_20251124_061947.png)
 
 *Figure 3.2.3 3D cost network analysis: cost distribution and network topology relationship*
 
@@ -717,7 +717,7 @@ All line power flows are within limits, with the highest utilization rate being 
 
 Power balance constraints for all buses are satisfied, and the reference bus (Bus 1) angle is 0 (correct). The DC power flow model allows large angle variations to satisfy power balance, which is a characteristic of the DC power flow model.
 
-![Bus Voltage Angle Time Series](results/problem2/8_bus_angles_20251124_061947.png)
+![Bus Voltage Angle Time Series](Problem/results/problem2/8_bus_angles_20251124_061947.png)
 
 *Figure 3.2.2 Voltage angles of each bus over time (DC power flow model)*
 
@@ -979,7 +979,7 @@ The simulated annealing algorithm gradually converges to high-quality solutions 
 
 ### 3.3.4 Solution Results Analysis
 
-![QUBO Solution Results Comprehensive Dashboard](results/problem3/advanced_6_dashboard_20251124_062534.png)
+![QUBO Solution Results Comprehensive Dashboard](Problem/results/problem3/advanced_6_dashboard_20251124_062534.png)
 
 *Figure 3.3.1 QUBO solution results comprehensive dashboard: showing 24-hour generation schedules for each unit, cost comparison, and constraint satisfaction status*
 
@@ -1006,7 +1006,7 @@ The quantization error $E_{\text{quant}} = 859.21$ dollars, accounting for 5.68%
 2. **Power balance violation**: Discretization prevents precise satisfaction of power balance constraints, with maximum violation of 30.0 MW (period 11)
 3. **Constraint penalty term impact**: Although most constraints are satisfied, power balance violations lead to increased penalty terms
 
-![Discretization Error Analysis](results/problem3/theoretical_9_error_analysis_20251124_062534.png)
+![Discretization Error Analysis](Problem/results/problem3/theoretical_9_error_analysis_20251124_062534.png)
 
 *Figure 3.3.2 Discretization error analysis: showing error distribution and sources between QUBO discrete solution and continuous optimal solution*
 
@@ -1051,7 +1051,7 @@ Discretization limits precise control of generation output. Each unit can only c
 
 3. **Discrete value distribution**: All units fully utilize the 4 discrete values, demonstrating the effectiveness of 2-bit encoding. However, the step size between discrete values is large (6.67-83.33 MW), limiting further precision improvement.
 
-![Unit-wise Generation Schedule Comparison](results/problem3/advanced_12_unitwise_comparison_20251124_062534.png)
+![Unit-wise Generation Schedule Comparison](Problem/results/problem3/advanced_12_unitwise_comparison_20251124_062534.png)
 
 *Figure 3.3.3 Unit-wise generation schedule comparison: showing differences between QUBO discrete solution and continuous optimal solution for each unit in each period*
 
@@ -1073,15 +1073,15 @@ However, increasing variable count leads to:
 - Solution time exponential growth
 - Memory requirement quadratic growth
 
-![3D Generation Schedule Comparison](results/problem3/advanced_2_3d_comparison_20251124_054745.png)
+![3D Generation Schedule Comparison](Problem/results/problem3/advanced_2_3d_comparison_20251124_054745.png)
 
 *Figure 3.3.4 3D comparison of QUBO discrete solution and continuous optimal solution: showing three-dimensional distribution differences of generation output for each unit in each period*
 
-![Contour Comparison Analysis](results/problem3/advanced_7_contour_comparison_20251124_062534.png)
+![Contour Comparison Analysis](Problem/results/problem3/advanced_7_contour_comparison_20251124_062534.png)
 
 *Figure 3.3.5 Contour comparison analysis: showing distribution differences between QUBO discrete solution and continuous optimal solution in generation output space through contour plots*
 
-![Heatmap Comparison Analysis](results/problem3/advanced_10_heatmap_comparison_20251124_062534.png)
+![Heatmap Comparison Analysis](Problem/results/problem3/advanced_10_heatmap_comparison_20251124_062534.png)
 
 *Figure 3.3.6 Heatmap comparison analysis: showing absolute difference distribution between QUBO discrete solution and continuous optimal solution for each unit in each period through heatmaps*
 
@@ -1410,7 +1410,7 @@ The period mapping relationship $\phi: T \to T'$ establishes correspondence betw
 
 This mapping relationship ensures that each original period has a corresponding reduced period, providing a foundation for subsequent solution expansion.
 
-![Time Period Aggregation Principle](results/problem4/principle_3_time_aggregation_20251124_061402.png)
+![Time Period Aggregation Principle](Problem/results/problem4/principle_3_time_aggregation_20251124_061402.png)
 
 *Figure 3.4.1 Time period aggregation principle: showing how 24 original periods map to 16 key periods, and load aggregation method*
 
@@ -1471,7 +1471,7 @@ i.e., the step size of 1-bit discretization is 3 times that of 2-bit discretizat
 | 11   | 10               | 30                | 20                             | 10, 30      |
 | 13   | 12               | 40                | 28                             | 12, 40      |
 
-![Binary Encoding Principle](results/problem4/principle_6_binary_encoding_20251124_061402.png)
+![Binary Encoding Principle](Problem/results/problem4/principle_6_binary_encoding_20251124_061402.png)
 
 *Figure 3.4.2 Binary encoding principle: showing how 1-bit and 2-bit discretization methods map continuous generation output to binary variables*
 
@@ -1556,7 +1556,7 @@ $$\rho = \frac{N_{\text{reduced}}}{N_{\text{original}}} = \frac{96}{288} = \frac
 
 This reduction ratio satisfies the CIM hardware limitation while maintaining problem representativeness as much as possible.
 
-![Reduction Strategy Comprehensive Dashboard](results/problem4/advanced_8_reduction_dashboard_20251124_061102.png)
+![Reduction Strategy Comprehensive Dashboard](Problem/results/problem4/advanced_8_reduction_dashboard_20251124_061102.png)
 
 *Figure 3.4.3 Reduction strategy comprehensive dashboard: comprehensive view showing size reduction effectiveness, cost comparison, and constraint satisfaction*
 
@@ -1669,7 +1669,7 @@ Systematic violations exist in power balance constraints, with maximum violation
 2. **Other units** switch between 2 discrete values according to load changes, but limited by 1-bit discretization precision, unable to precisely match the continuous optimal solution.
 3. **Discrete Value Distribution**: All units fully utilize both discrete values, demonstrating the effectiveness of 1-bit encoding. However, the step size between discrete values is large (20-250 MW), limiting further precision improvement.
 
-![Generation Schedule Heatmap Comparison](results/problem4/advanced_4_generation_heatmap_comparison_20251124_061102.png)
+![Generation Schedule Heatmap Comparison](Problem/results/problem4/advanced_4_generation_heatmap_comparison_20251124_061102.png)
 
 *Figure 3.4.4 Generation schedule heatmap comparison: showing generation output distribution comparison between reduced problem and full-scale expanded problem for each unit in each period*
 
@@ -1694,7 +1694,7 @@ p_{i,\phi(t)}^{\text{reduced}}, & \text{if } t \notin T'
 
 This expansion method is simple and efficient, but may introduce errors in some periods, especially when the load difference between the original period and the mapping period is large.
 
-![3D Reduced Solution vs Full-Scale Solution Comparison](results/problem4/advanced_1_3d_reduced_vs_full_20251124_061102.png)
+![3D Reduced Solution vs Full-Scale Solution Comparison](Problem/results/problem4/advanced_1_3d_reduced_vs_full_20251124_061102.png)
 
 *Figure 3.4.5 3D reduced solution vs full-scale solution comparison: showing generation output distribution differences between reduced problem solution and full-scale expanded solution for each unit in each period through 3D visualization*
 
