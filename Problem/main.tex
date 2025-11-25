@@ -1,0 +1,110 @@
+% !Mode:: "TeX:UTF-8"
+%%  This template recommends the following compilation methods:
+%%     1. PDFLaTeX [Recommended]
+%%     2. xelatex [Recommended for Chinese]
+%%  Note:
+%%   1. The default encoding of files is UTF-8. For Windows, please use an editor that supports UTF-8 encoding.
+%%   2. If you have any questions about the template, please contact us in time, Email: latexstudio@qq.com.
+%%   3. You can ask questions at https://ask.latexstudio.net
+%%   4. Please install the latest version of TeXLive at:
+%%   http://mirrors.ctan.org/systems/texlive/Images/texlive.iso
+
+\documentclass{apmcmthesis}
+
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{ctex}  % Support for Chinese (kept for compatibility)
+\usepackage{bm}  % Bold math symbols
+
+% Code style settings
+\lstset{
+    language=Matlab,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!60!black},
+    stringstyle=\color{red},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    numbersep=5pt,
+    frame=single,
+    breaklines=true,
+    breakatwhitespace=false,
+    tabsize=4
+}
+
+% Figure spacing settings (one space between figures and text)
+\setlength{\intextsep}{0pt plus 0pt minus 0pt}  % Figure vertical spacing (one space)
+\setlength{\floatsep}{0pt plus 0pt minus 0pt}    % Spacing between floating objects
+\setlength{\textfloatsep}{0pt plus 0pt minus 0pt} % Spacing between text and floating objects (one space)
+\setlength{\abovecaptionskip}{0pt}  % Spacing above figure caption
+\setlength{\belowcaptionskip}{0pt}  % Spacing below figure caption
+
+%%%%%%%%%%%% Fill in relevant information %%%%%%%%%%%%%%%%%%%%%%%%%%
+\tihao{A}                            % Problem selection
+\baominghao{apmcm25311118}                 % Registration number
+
+\begin{document}
+
+\pagestyle{frontmatterstyle}
+
+% Abstract (Optimized - Highlighting Key Understanding and Data)
+\begin{abstract}
+\textbf{[Key Understanding]} The safety of robot motors is the core of operation, and the stability of their power output directly affects the overall safety of the robot. This paper deeply understands that robot motion planning must simultaneously consider the dual guarantees of \textbf{motor safety} and \textbf{center of gravity stability}. By optimizing motor control algorithms to achieve smooth power output and ensuring that the center of gravity always falls within the support surface, the risk of robot falling and loss of control can be avoided.
+
+Aiming at the motion planning problem of Unitree G1 humanoid robot in dance performance, this paper establishes \textbf{four complete mathematical models}, which respectively solve core problems such as joint angle calculation, motion trajectory planning, multi-joint coordinated control, and energy consumption optimization, achieving the following important results:
+
+\textbf{[Problem 1: Joint Angle and Position Calculation]} A rigid rod model based on spherical coordinate system is established, and forward kinematics method is adopted to accurately calculate the end-effector position coordinates as \textbf{$\bm{(146.4, 84.5, 292.7)}$ mm}. Multi-dimensional safety verification confirms that the motion meets motor safety requirements: torque \textbf{$\bm{1.24}$ N·m} (safety margin \textbf{$\bm{98.6\%}$}, limit value \textbf{$\bm{90}$ N·m}), angular velocity \textbf{$\bm{0.35}$ rad/s} (safety margin \textbf{$\bm{98.8\%}$}, limit value \textbf{$\bm{30}$ rad/s}), power \textbf{$\bm{0.434}$ W} (safety margin \textbf{$\bm{99.98\%}$}, limit value \textbf{$\bm{2700}$ W}).
+
+\textbf{[Problem 2: Motion Trajectory Modeling and Time Planning]} A trajectory planning model based on gait planning and inverse kinematics is established, determining the complete angle functions of \textbf{$\bm{6}$ joints} in a single leg. The total time to complete \textbf{$\bm{10}$ meters} of straight-line walking is \textbf{$\bm{T = 5}$ s} (average speed \textbf{$\bm{2}$ m/s}), and the moment when the knee joint angle changes most is \textbf{$\bm{t_{max} \approx 0.2}$ s} (occurs at the landing instant at the end of the swing phase).
+
+\textbf{[Problem 3: Multi-Joint Coordinated Motion Planning]} A multi-joint coordinated control model is established, achieving coordinated motion of the body, arms, and legs. A complete mathematical model of \textbf{$\bm{29}$ joints} is established (body \textbf{$\bm{1}$} + arms \textbf{$\bm{14}$} + legs \textbf{$\bm{12}$}), achieving coordinated control of body rotation \textbf{$\bm{45°}$}, arm circular motion (radius \textbf{$\bm{300}$ mm}, period \textbf{$\bm{4}$ seconds}), and leg balance adjustment.
+
+\textbf{[Problem 4: Energy Consumption Optimization]} An energy consumption calculation and optimization model is established, minimizing energy consumption under the constraint of maintaining motion effects. The total energy consumption for completing all motions is \textbf{$\bm{E_{total} = 0.070}$ Wh} (only \textbf{$\bm{0.007\%}$} of battery capacity \textbf{$\bm{1008}$ Wh}). Through optimization strategies, the total energy consumption is reduced by \textbf{$\bm{17.1\%}$}, and the optimized energy consumption is \textbf{$\bm{E_{total,opt} = 0.058}$ Wh} (Problem 1 reduced by \textbf{$\bm{16\%}$}, Problem 2 reduced by \textbf{$\bm{17\%}$}, Problem 3 reduced by \textbf{$\bm{18\%}$}).
+
+\keywords{Robot Kinematics\quad  Trajectory Planning\quad  Multi-Joint Coordinated Control\quad  Energy Consumption Optimization\quad  Unitree G1}
+\end{abstract}
+
+\newpage
+% Table of contents
+\tableofcontents
+
+\newpage
+\pagestyle{mainmatterstyle}
+\setcounter{page}{1}
+
+% Include all sections
+\input{sections/01-introduction}
+\input{sections/02-problem-description}
+\input{sections/03-model1}
+\input{sections/04-model2}
+\input{sections/05-model3}
+\input{sections/06-model4}
+\input{sections/07-conclusions}
+
+% References
+\begin{thebibliography}{10}
+\bibitem{1} Unitree G1 产品官网. https://www.unitree.com/cn/g1
+\bibitem{2} Unitree G1 开发者文档. https://support.unitree.com/home/zh/G1\_developer/about\_G1
+\bibitem{3} Liang Liang, Wu Chengdong, Liu Shichang. Absolute Position Accuracy Calibration Algorithm for Robots Based on Joint Geometric Errors [J]. Journal of Northeastern University (Natural Science Edition), 2025, 46 (4): 1-7
+\bibitem{4} Zhang Xiuli, Zhao Haoyu, Wu Jianing, etc. Trajectory optimization and control method for quadruped robot jumping in the air [J]. Journal of Beijing Jiaotong University, 2024, 48 (3): 161-170
+\bibitem{5} Zhang Xinhao. Research on Motion Control Method of Four legged Robot Based on Trajectory Optimization [D]. University of Electronic Science and Technology of China, 2023
+\bibitem{6} Zhu Haohui. Optimization control method for motion trajectory accuracy of quadruped robot based on joint angle compensation [J]. Modeling and Simulation, 2024, 13 (3): 2305-2314
+\bibitem{7} Wu Yongqiang, Tang Xianzhi, Song Wei, etc. Power Equivalent Model and Parameter Identification of Industrial Robots [J]. Journal of Chongqing University, 2021 (044-010)
+\bibitem{8} Zhang Bin. Multi constraint based robot joint space trajectory planning [J]. Journal of Mechanical Engineering, 2011, 47 (21): 6
+\bibitem{9} Wang Mei, Wu Tiejun. Research on Multi Robot Collaborative Motion Planning and Related Issues [J]. Manufacturing Automation, 2005, 27 (5): 6
+\bibitem{10} Qiu Binquan, Chen Silu, Gu Yingkui, etc. Synchronization planning of robot joint trapezoidal velocity trajectory for optimal energy consumption [J]. Mechanical Design and Research, 2022 (004): 038
+\end{thebibliography}
+
+\newpage
+% Appendix
+\section{Appendix}
+\input{sections/08-appendix}
+
+\end{document}
+

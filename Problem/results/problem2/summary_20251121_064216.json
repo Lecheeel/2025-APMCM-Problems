@@ -1,0 +1,81 @@
+{
+  "optimization_info": {
+    "timestamp": "20251121_064216",
+    "total_cost": 15129.082384134777,
+    "fuel_cost": 15129.082384134781,
+    "startup_cost": 0.0,
+    "shutdown_cost": 0.0,
+    "num_units": 6,
+    "num_periods": 24,
+    "num_buses": 30,
+    "num_branches": 41,
+    "units": [
+      1,
+      2,
+      5,
+      8,
+      11,
+      13
+    ],
+    "spinning_reserve_enabled": true,
+    "n1_security_enabled": true,
+    "inertia_constraint_enabled": false,
+    "min_up_time_table": 1
+  },
+  "unit_statistics": [
+    {
+      "unit_id": 1,
+      "total_generation_MWh": 1272.3981614693112,
+      "average_generation_MW": 53.0165900612213,
+      "on_periods": 24,
+      "utilization_rate": 1.0,
+      "startup_events": [],
+      "shutdown_events": []
+    },
+    {
+      "unit_id": 2,
+      "total_generation_MWh": 1478.9186987079354,
+      "average_generation_MW": 61.62161244616397,
+      "on_periods": 24,
+      "utilization_rate": 1.0,
+      "startup_events": [],
+      "shutdown_events": []
+    },
+    {
+      "unit_id": 5,
+      "total_generation_MWh": 558.0972386664135,
+      "average_generation_MW": 23.254051611100564,
+      "on_periods": 24,
+      "utilization_rate": 1.0,
+      "startup_events": [],
+      "shutdown_events": []
+    },
+    {
+      "unit_id": 8,
+      "total_generation_MWh": 686.103228505427,
+      "average_generation_MW": 28.587634521059456,
+      "on_periods": 24,
+      "utilization_rate": 1.0,
+      "startup_events": [],
+      "shutdown_events": []
+    },
+    {
+      "unit_id": 11,
+      "total_generation_MWh": 449.46184077280395,
+      "average_generation_MW": 18.727576698866827,
+      "on_periods": 24,
+      "utilization_rate": 1.0,
+      "startup_events": [],
+      "shutdown_events": []
+    },
+    {
+      "unit_id": 13,
+      "total_generation_MWh": 458.0208318785388,
+      "average_generation_MW": 19.084201328272446,
+      "on_periods": 24,
+      "utilization_rate": 1.0,
+      "startup_events": [],
+      "shutdown_events": []
+    }
+  ]
+}

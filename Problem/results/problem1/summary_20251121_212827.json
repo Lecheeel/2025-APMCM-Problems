@@ -1,0 +1,107 @@
+{
+  "optimization_info": {
+    "timestamp": "20251121_212827",
+    "total_cost": 15129.082382453194,
+    "fuel_cost": 15129.082382453213,
+    "startup_cost": 0.0,
+    "shutdown_cost": 0.0,
+    "num_units": 6,
+    "num_periods": 24,
+    "units": [
+      1,
+      2,
+      5,
+      8,
+      11,
+      13
+    ],
+    "min_up_time_table": 2,
+    "min_up_time_source": "Table 2 (Part B)"
+  },
+  "unit_statistics": [
+    {
+      "unit_id": 1,
+      "total_generation_MWh": 1272.3980309423346,
+      "average_generation_MW": 53.016584622597286,
+      "max_generation_MW": 62.23628691983123,
+      "min_generation_MW": 50.0,
+      "on_periods": 24,
+      "off_periods": 0,
+      "utilization_rate": 1.0,
+      "startup_events": [],
+      "shutdown_events": [],
+      "total_startup_cost": 0.0,
+      "total_shutdown_cost": 0.0
+    },
+    {
+      "unit_id": 2,
+      "total_generation_MWh": 1478.9187451654057,
+      "average_generation_MW": 61.62161438189191,
+      "max_generation_MW": 78.27004219409282,
+      "min_generation_MW": 33.59375,
+      "on_periods": 24,
+      "off_periods": 0,
+      "utilization_rate": 1.0,
+      "startup_events": [],
+      "shutdown_events": [],
+      "total_startup_cost": 0.0,
+      "total_shutdown_cost": 0.0
+    },
+    {
+      "unit_id": 5,
+      "total_generation_MWh": 558.0972486463136,
+      "average_generation_MW": 23.254052026929738,
+      "max_generation_MW": 27.915611814345993,
+      "min_generation_MW": 15.40625,
+      "on_periods": 24,
+      "off_periods": 0,
+      "utilization_rate": 1.0,
+      "startup_events": [],
+      "shutdown_events": [],
+      "total_startup_cost": 0.0,
+      "total_shutdown_cost": 0.0
+    },
+    {
+      "unit_id": 8,
+      "total_generation_MWh": 686.1032490313003,
+      "average_generation_MW": 28.58763537630418,
+      "max_generation_MW": 35.0,
+      "min_generation_MW": 10.0,
+      "on_periods": 24,
+      "off_periods": 0,
+      "utilization_rate": 1.0,
+      "startup_events": [],
+      "shutdown_events": [],
+      "total_startup_cost": 0.0,
+      "total_shutdown_cost": 0.0
+    },
+    {
+      "unit_id": 11,
+      "total_generation_MWh": 449.46187161578416,
+      "average_generation_MW": 18.727577983991008,
+      "max_generation_MW": 29.789029535864973,
+      "min_generation_MW": 10.0,
+      "on_periods": 24,
+      "off_periods": 0,
+      "utilization_rate": 1.0,
+      "startup_events": [],
+      "shutdown_events": [],
+      "total_startup_cost": 0.0,
+      "total_shutdown_cost": 0.0
+    },
+    {
+      "unit_id": 13,
+      "total_generation_MWh": 458.0208545988613,
+      "average_generation_MW": 19.084202274952556,
+      "max_generation_MW": 29.78902953586498,
+      "min_generation_MW": 12.0,
+      "on_periods": 24,
+      "off_periods": 0,
+      "utilization_rate": 1.0,
+      "startup_events": [],
+      "shutdown_events": [],
+      "total_startup_cost": 0.0,
+      "total_shutdown_cost": 0.0
+    }
+  ]
+}

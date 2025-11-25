@@ -1,0 +1,19 @@
+# Unit Commitment Problem - Dependencies
+# ======================================
+# Core optimization solver
+# gurobipy>=10.0.0 已安装
+
+# Numerical computing
+numpy>=1.20.0
+
+# Data processing and saving
+pandas>=1.3.0
+
+# Visualization libraries
+matplotlib>=3.4.0
+seaborn>=0.11.0
+
+# Note: Gurobi requires a license
+# Free academic license available at: https://www.gurobi.com/academia/academic-program-and-licenses/
+# After installing gurobipy, run: grbgetkey [license-key]
+

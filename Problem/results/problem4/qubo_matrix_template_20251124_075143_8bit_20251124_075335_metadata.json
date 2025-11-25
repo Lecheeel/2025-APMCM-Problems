@@ -1,0 +1,25 @@
+{
+  "timestamp": "2025-11-24 07:53:35",
+  "input_file": "results\\problem4\\qubo_matrix_template_20251124_075143.csv",
+  "output_file": "results\\problem4\\qubo_matrix_template_20251124_075143_8bit_20251124_075335.csv",
+  "adjustment_info": {
+    "original_min": -25000000.0,
+    "original_max": 80015660.5,
+    "original_abs_max": 80015660.5,
+    "scale_factor": 1.5871892977750274e-06,
+    "adjusted_min": -40,
+    "adjusted_max": 127,
+    "precision_loss": 50413432482293.39
+  },
+  "matrix_info": {
+    "shape": [
+      100,
+      100
+    ],
+    "dtype": "int32",
+    "min": -40,
+    "max": 127,
+    "non_zero_count": 666,
+    "sparsity": 0.9334
+  }
+}
