@@ -91,3 +91,8 @@ gurobi.env
 # *.png
 # *.gif
 
+# Large files that exceed GitHub's 100MB limit
+Problem/pandoc.exe
+**/Dapmcm25310543src.zip
+*.exe
+
